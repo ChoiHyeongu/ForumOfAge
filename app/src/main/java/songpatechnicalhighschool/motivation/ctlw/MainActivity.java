@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         viewPagerAdapter.addFragment(new CategoryFragment(), "Category");
+        viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
         viewPagerAdapter.addFragment(new SettingFragment(), "Setting");
 
         viewPager.setAdapter(viewPagerAdapter);
