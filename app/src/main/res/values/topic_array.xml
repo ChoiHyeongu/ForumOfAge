@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topic">
+        <item>가치관</item>
+        <item>사랑</item>
+        <item>가족</item>
+        <item>이별</item>
+        <item>친구</item>
+        <item>성격</item>
+        <item>놀이문화</item>
+        <item>취미</item>
+        <item>공부</item>
+        <item >취업</item>
+    </string-array>
+</resources>

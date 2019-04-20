@@ -6,6 +6,10 @@ public class Category {
     int youngMin, youngMax;
     int oldMin, oldMax;
 
+    public Category(String topic) {
+        this.topic = topic;
+    }
+
     public Category(String topic, int youngMin, int youngMax, int oldMin, int oldMax) {
         this.topic = topic;
         this.youngMin = youngMin;

@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context=".ProfileFragment">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="박지원"
-    android:textSize="20dp"
-    android:textColor="#000000"
-    android:textStyle="bold"
-    android:layout_marginTop="10dp"
-    android:id="@+id/tv_Title"
-    />
+    android:orientation="vertical"
+    tools:context=".Fragment.ProfileFragment">
+
+    <TextView
+        android:id="@+id/profile_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="박지원"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/ivUser"
+        android:scaleType="centerCrop"
+        android:id="@+id/profile_image_imageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/tv_Title"
@@ -46,11 +47,10 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:background="#FFFFFF"
-            android:text="완벽함"
-            android:textColor="#000000"
-            android:textSize="15dp"
             android:gravity="center_vertical"
-            />
+            android:text="성격 : 완벽함"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
         <View
             android:layout_width="match_parent"
@@ -64,11 +64,10 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:background="#FFFFFF"
-            android:text="2003년 11월 16일                                                          17세"
-            android:textColor="#000000"
-            android:textSize="15dp"
             android:gravity="center_vertical"
-            />
+            android:text="생년월일 : 2003년 11월 16일                                                          17세"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
 
         <View
@@ -83,11 +82,10 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:background="#FFFFFF"
-            android:text="smile0375-@naver.com"
-            android:textColor="#000000"
-            android:textSize="15dp"
             android:gravity="center_vertical"
-            />
+            android:text="Email : smile0375-@naver.com"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
     </LinearLayout>
 </LinearLayout>

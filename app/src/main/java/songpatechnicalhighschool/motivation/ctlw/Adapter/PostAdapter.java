@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.List;
 
 import songpatechnicalhighschool.motivation.ctlw.Module.Post;
@@ -20,10 +22,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     private List<Post> posts;
     private Context context;
+    private String topic;
 
-    public PostAdapter(List<Post> posts, Context context) {
+    public PostAdapter(List<Post> posts, Context context, String topic) {
         this.posts = posts;
         this.context = context;
+        this.topic = topic;
     }
 
     @NonNull
@@ -35,14 +39,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int i) {
-        Post post = posts.get(i);
+        final Post post = posts.get(i);
         holder.titleText.setText(post.getTitle());
         holder.dateText.setText(post.getDate());
         holder.previewText.setText(post.getPreview());
+        final String title = post.getTitle();
         holder.postLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, PostDetailActivity.class));
+                Intent intent = new Intent(context, PostDetailActivity.class);
+                intent.putExtra("topic", topic);
+                intent.putExtra("title", title);
+                intent.putExtra("key", post.getKey());
+                context.startActivity(intent);
             }
         });
     }

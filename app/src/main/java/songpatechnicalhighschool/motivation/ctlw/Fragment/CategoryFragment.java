@@ -48,15 +48,15 @@ public class CategoryFragment extends Fragment {
     }
 
     private void addInterest() {
-        categories.add(new Category("가족", 10, 20, 50, 60));
-        categories.add(new Category("친구", 10, 20, 50, 60));
-        categories.add(new Category("가치관", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-        categories.add(new Category("감정", 10, 20, 50, 60));
-
+        categories.add(new Category("가치관"));
+        categories.add(new Category("사랑"));
+        categories.add(new Category("가족"));
+        categories.add(new Category("이별"));
+        categories.add(new Category("친구"));
+        categories.add(new Category("성격"));
+        categories.add(new Category("놀이문화"));
+        categories.add(new Category("취미"));
+        categories.add(new Category("공부"));
+        categories.add(new Category("취업"));
     }
 }

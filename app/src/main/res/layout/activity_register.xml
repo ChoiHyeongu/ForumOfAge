@@ -4,11 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
 
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="회원가입"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginTop="130dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_email_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
@@ -17,6 +32,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_password_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
@@ -25,6 +41,7 @@
         android:inputType="textPassword" />
 
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_name_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
@@ -33,6 +50,7 @@
 
 
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_gender_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
@@ -40,6 +58,7 @@
         android:hint="성별" />
 
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_age_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
@@ -48,17 +67,21 @@
 
 
     <EditText
+        android:layout_marginBottom="10dp"
         android:id="@+id/register_birth_edit"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="생년월일" />
 
+
     <Button
         android:id="@+id/register_signup_btn"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:text="회원가입" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

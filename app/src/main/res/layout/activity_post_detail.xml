@@ -5,55 +5,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PostDetailActivity"
-    >
+    tools:context=".PostDetailActivity">
 
     <TextView
+        android:id="@+id/detail_title_text"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:text="억울하다;;"
-        android:textStyle="normal"
         android:textColor="#000000"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="1dp"
         android:background="#A1A1A1" />
+
     <TextView
+        android:id="@+id/detail_content_text"
         android:layout_width="370dp"
         android:layout_height="300dp"
-        android:text="아니 오늘 내가 진짜 공부하려고 딱 맘 먹고 책상에 앉아서 책을 피려는 순간 엄마가 와서 공부 안한다고 진짜 막 혼내가지고 ㅠㅠㅜㅠㅜㅠ 멘탈 와장창 너무 슬퍼 하 위로해줄사람ㅜㅜㅜ"
         android:layout_marginLeft="20dp"
-        android:textStyle="normal"
+        android:scrollbars="vertical"
+        android:text="아니 오늘 내가 진짜 공부하려고 딱 맘 먹고 책상에 앉아서 책을 피려는 순간 엄마가 와서 공부 안한다고 진짜 막 혼내가지고 ㅠㅠㅜㅠㅜㅠ 멘탈 와장창 너무 슬퍼 하 위로해줄사람ㅜㅜㅜ"
         android:textColor="#000000"
-        android:textSize="24dp" />
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
         android:background="#A1A1A1" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginHorizontal="10dp"
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:background="#94FF8E87"
+            android:background="#FF5722"
+            android:id="@+id/detail_user1_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
             android:text="찬성" />
 
-        <Button
-            android:layout_width="210dp"
+        <TextView
+            android:layout_width="50dp"
             android:layout_height="100dp"
-            android:background="#94FF8E87"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            android:text="VS"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/detail_user2_btn"
+            android:background="#FFC107"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
             android:text="반대" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/detail_user1_ratio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF5722"
+            android:gravity="center"
+            android:text="user1"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detail_user2_ratio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFC107"
+            android:gravity="center"
+            android:text="user2"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

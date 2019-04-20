@@ -3,17 +3,22 @@ package songpatechnicalhighschool.motivation.ctlw.Module;
 public class User {
 
     private String email;
-    private String name;
+    private String username;
     private String gender;
-    private int age;
-    private int birth;
+    private String age;
+    private String birth;
+    private String imageURL;
 
-    public User(String email, String name, String gender, int age, int birth) {
+    public User() {
+    }
+
+    public User(String email, String username, String gender, String age, String birth, String imageURL) {
         this.email = email;
-        this.name = name;
+        this.username = username;
         this.gender = gender;
         this.age = age;
         this.birth = birth;
+        this.imageURL = imageURL;
     }
 
     public String getEmail() {
@@ -24,12 +29,12 @@ public class User {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getGender() {
@@ -40,19 +45,27 @@ public class User {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public int getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(int birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

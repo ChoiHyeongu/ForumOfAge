@@ -1,5 +1,6 @@
 package songpatechnicalhighschool.motivation.ctlw.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -36,13 +37,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int i) {
-        Category category = categories.get(i);
+        final Category category = categories.get(i);
 
         holder.topicText.setText(category.getTopic());
         holder.topicLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, PostActivity.class));
+                Intent intent = new Intent(context, PostActivity.class);
+                intent.putExtra("topic", category.getTopic());
+                context.startActivity(intent);
             }
         });
     }

@@ -1,9 +1,19 @@
 package songpatechnicalhighschool.motivation.ctlw;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +28,19 @@ public class PostActivity extends AppCompatActivity {
     private RecyclerView postView;
     private PostAdapter postAdapter;
     private List<Post> posts;
-    private String content = "저는 고3 여학생입니다.\n" +
-            "전문계 식품과를 다니는데 토요일에 학교에서 어찌저찌하여";
+    private DatabaseReference reference;
+    private String topic;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+
+        Intent getIntent = getIntent();
+        topic = getIntent.getExtras().getString("topic");
+        reference = FirebaseDatabase.getInstance().getReference("Post");
 
         postView = findViewById(R.id.post_post_view);
         postView.setHasFixedSize(true);
@@ -35,19 +50,29 @@ public class PostActivity extends AppCompatActivity {
 
         addPost();
 
-        postAdapter = new PostAdapter(posts, this);
+        postAdapter = new PostAdapter(posts, this, topic);
         postView.setAdapter(postAdapter);
     }
 
     private void addPost() {
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
-        posts.add(new Post("엄마랑 싸웠는데 어떻게하죠?", "09:30", content, ""));
 
+        reference.child(topic).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                posts.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Post post = snapshot.getValue(Post.class);
+                    posts.add(post);
+                }
 
+                postAdapter = new PostAdapter(posts, PostActivity.this, topic);
+                postView.setAdapter(postAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

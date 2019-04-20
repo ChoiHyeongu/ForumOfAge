@@ -3,7 +3,6 @@ package songpatechnicalhighschool.motivation.ctlw;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +15,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 import songpatechnicalhighschool.motivation.ctlw.Fragment.CategoryFragment;
+import songpatechnicalhighschool.motivation.ctlw.Fragment.ProfileFragment;
 import songpatechnicalhighschool.motivation.ctlw.Fragment.SettingFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLoyout = findViewById(R.id.tab_layout);
         ViewPager viewPager = findViewById(R.id.view_pager);
 
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, WritingActivity.class));
+            }
+        });
+
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
@@ -38,14 +46,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLoyout.setupWithViewPager(viewPager);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //startActivity(new Intent(this, WritingAcitivity.class));
-            }
-        });
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         private ArrayList<Fragment> fragmentArrayList;
         private ArrayList<String> titles;
 
-        ViewPagerAdapter(FragmentManager fm){
+        ViewPagerAdapter(FragmentManager fm) {
             super(fm);
             this.fragmentArrayList = new ArrayList<>();
             this.titles = new ArrayList<>();
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             return fragmentArrayList.size();
         }
 
-        public void addFragment(Fragment fragment, String title){
+        public void addFragment(Fragment fragment, String title) {
             fragmentArrayList.add(fragment);
             titles.add(title);
         }
