@@ -5,12 +5,14 @@ public class Post {
     String date;
     String preview;
     String content;
+    Category category;
 
-    public Post(String title, String date, String preview, String content) {
+    public Post(String title, String date, String preview, String content, Category category) {
         this.title = title;
         this.date = date;
         this.preview = preview;
         this.content = content;
+        this.category = category;
     }
 
     public String getTitle() {
@@ -43,5 +45,13 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

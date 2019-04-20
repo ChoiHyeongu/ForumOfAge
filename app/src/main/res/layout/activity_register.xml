@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/register_email_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/register_password_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/register_name_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="이름" />
+
+
+    <EditText
+        android:id="@+id/register_gender_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="성별" />
+
+    <EditText
+        android:id="@+id/register_age_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="나이" />
+
+
+    <EditText
+        android:id="@+id/register_birth_edit"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="생년월일" />
+
+    <Button
+        android:id="@+id/register_signup_btn"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:text="회원가입" />
+
+
+</LinearLayout>
