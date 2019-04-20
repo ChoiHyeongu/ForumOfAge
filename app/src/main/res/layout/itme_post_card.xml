@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/post_title_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="엄마랑 싸웠는데 어떻게하죠?"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:gravity="right"
+                    android:id="@+id/post_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    tools:text="09:30" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/post_preview_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:maxHeight="100dp"
+            tools:text="저는 고3 여학생입니다.
+전문계 식품과를 다니는데 토요일에 학교에서 어찌저찌하여
+가토쇼콜라를 만들어 왔습니다,
+여섯살 어린 막내가 워낙 과자같은 걸 좋아해서 한 번에 많이 먹는 경향이 있어" />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

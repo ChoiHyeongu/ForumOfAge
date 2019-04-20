@@ -12,6 +12,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import songpatechnicalhighschool.motivation.ctlw.Fragment.CategoryFragment;
+import songpatechnicalhighschool.motivation.ctlw.Fragment.SettingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         viewPagerAdapter.addFragment(new CategoryFragment(), "Category");
+        viewPagerAdapter.addFragment(new SettingFragment(), "Setting");
 
         viewPager.setAdapter(viewPagerAdapter);
 
